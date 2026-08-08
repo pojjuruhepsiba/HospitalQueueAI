@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Hospital Chatbot</title>
+
+<style>
+body{
+    margin:0;
+    font-family:Arial,sans-serif;
+
+    background-image:
+    linear-gradient(rgba(0,90,180,0.75),
+    rgba(0,90,180,0.75)),
+    url("https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d");
+
+    background-size:cover;
+    background-position:center;
+    background-attachment:fixed;
+}
+
+.chat-container{
+    width:450px;
+    max-width:90%;
+    margin:40px auto;
+
+    background:rgba(255,255,255,0.95);
+    backdrop-filter:blur(10px);
+
+    border-radius:20px;
+    overflow:hidden;
+
+    box-shadow:0 10px 30px rgba(0,0,0,0.25);
+}
+
+.chat-header{
+    background:linear-gradient(135deg,#0D6EFD,#0099ff);
+    color:white;
+    padding:18px;
+    font-size:22px;
+    font-weight:bold;
+}
+
+.chat-box{
+    height:400px;
+    padding:15px;
+    overflow-y:auto;
+}
+
+.bot-message{
+    background:#e9f3ff;
+    padding:10px;
+    border-radius:10px;
+    margin-bottom:10px;
+    width:80%;
+}
+
+.user-message{
+    background:#0D6EFD;
+    color:white;
+    padding:10px;
+    border-radius:10px;
+    margin-left:auto;
+    margin-bottom:10px;
+    width:80%;
+}
+
+.chat-input{
+    display:flex;
+    border-top:1px solid #ddd;
+}
+
+.chat-input input{
+    flex:1;
+    border:none;
+    padding:15px;
+    outline:none;
+}
+
+.chat-input button{
+    background:#0D6EFD;
+    color:white;
+    border:none;
+    padding:15px 20px;
+    cursor:pointer;
+}
+.welcome-box{
+    background:#eaf4ff;
+    color:#003366;
+    padding:15px;
+    font-size:14px;
+    border-bottom:1px solid #d6e8ff;
+    line-height:1.6;
+}
+</style>
+</head>
+
+<body>
+
+<div class="chat-container">
+    <div class="chat-header">
+        Hospital Assistant
+    </div>
+
+    <div class="chat-box" id="chatBox">
+        <div class="bot-message">
+            Hello! How can I help you today?
+        </div>
+    </div>
+
+    <div class="chat-input">
+        <input type="text" id="userInput" placeholder="Type your message...">
+        <button onclick="sendMessage()">Send</button>
+    </div>
+</div>
+<div class="chat-header">
+    Hospital Assistant
+</div>
+
+<div class="welcome-box">
+    🏥 Welcome to Smart Hospital Assistant.<br>
+    I can help with appointments, doctors, departments,
+    emergency services and patient registration.
+</div>
+
+<div class="chat-box" id="chatBox">
+</div>
+    
+
+       
+
+        
+
+</div>
+</div>
+
+<script>
+    async function sendMessage() {
+
+    let input = document.getElementById("userInput");
+    let message = input.value.trim();
+
+    if(message === "") return;
+
+    let chatBox = document.getElementById("chatBox");
+
+    // Show user message
+    chatBox.innerHTML += `
+        <div class="user-message">${message}</div>
+    `;
+
+    input.value = "";
+
+    // Send to Flask
+    const response = await fetch("/ask", {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json"
+        },
+        body: JSON.stringify({
+            message: message
+        })
+    });
+
+    const data = await response.json();
+
+    // Show Gemini reply
+    chatBox.innerHTML += `
+        <div class="bot-message">${data.reply}</div>
+    `;
+
+    chatBox.scrollTop = chatBox.scrollHeight;
+}
+
+
+</script>
+
+</body>
+</html>

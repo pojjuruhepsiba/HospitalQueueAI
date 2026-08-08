@@ -1,0 +1,1 @@
+console.log("Smart Hospital Queue System Loaded");

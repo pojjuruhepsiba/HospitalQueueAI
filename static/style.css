@@ -1,0 +1,223 @@
+body{
+    font-family:'Segoe UI',sans-serif;
+    background: linear-gradient(135deg,#e0f2fe,#f8fafc);
+    min-height:100vh;
+}
+
+.main-card{
+    background:white;
+    border-radius:25px;
+    padding:40px;
+    box-shadow:0 15px 40px rgba(0,0,0,0.15);
+}
+
+.title{
+    color:#1e3a8a;
+    font-weight:700;
+}
+
+.btn-custom{
+    background:linear-gradient(90deg,#2563eb,#9333ea);
+    border:none;
+    color:white;
+    padding:12px;
+    border-radius:30px;
+    width:100%;
+    font-size:18px;
+    font-weight:bold;
+}
+
+.btn-custom:hover{
+    opacity:0.9;
+}
+
+input,textarea{
+    border-radius:15px !important;
+}
+
+.hero{
+    min-height:100vh;
+    display:flex;
+    align-items:center;
+}
+
+.token-box{
+    background:linear-gradient(135deg,#2563eb,#9333ea);
+    color:white;
+    padding:25px;
+    border-radius:20px;
+    text-align:center;
+}
+.hospital-side{
+    background:linear-gradient(135deg,#0f4c81,#2563eb);
+    color:white;
+    padding:40px;
+}
+
+.hospital-logo{
+    font-size:32px;
+    font-weight:bold;
+    margin-bottom:20px;
+}
+
+.welcome-title{
+    font-size:48px;
+    font-weight:700;
+    margin-bottom:15px;
+}
+
+.welcome-text{
+    font-size:18px;
+    margin-bottom:30px;
+}
+
+.doctor-card{
+    background:rgba(255,255,255,0.15);
+    padding:15px;
+    border-radius:15px;
+    margin-bottom:15px;
+    backdrop-filter:blur(10px);
+}
+
+.doctor-card h4{
+    margin-bottom:8px;
+}
+
+.subtitle{
+    color:#6b7280;
+    margin-bottom:25px;
+}
+.left-panel{
+    background:linear-gradient(135deg,#0f172a,#2563eb);
+    color:white;
+    padding:40px;
+    min-height:100vh;
+}
+
+.hospital-brand h1{
+    font-size:40px;
+    font-weight:700;
+}
+
+.tagline{
+    opacity:.8;
+}
+
+.hero-image{
+    text-align:center;
+    margin:20px 0;
+}
+
+.hero-title{
+    text-align:center;
+    margin-bottom:25px;
+}
+
+.stats{
+    display:flex;
+    gap:10px;
+    margin-bottom:25px;
+}
+
+.stat-box{
+    flex:1;
+    background:rgba(255,255,255,.15);
+    padding:15px;
+    border-radius:15px;
+    text-align:center;
+    backdrop-filter:blur(10px);
+}
+
+.speciality-box{
+    background:white;
+    color:#2563eb;
+    padding:12px;
+    border-radius:15px;
+    margin-bottom:12px;
+    font-weight:600;
+}
+
+.emergency-box{
+    background:#ef4444;
+    padding:15px;
+    border-radius:15px;
+    text-align:center;
+    margin-top:20px;
+    font-size:18px;
+    font-weight:bold;
+}
+
+
+
+
+/* Registration Form Card */
+
+.registration-form h2 {
+    color: #0D6EFD;
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+.registration-form p {
+    text-align: center;
+    color: #666;
+    margin-bottom: 25px;
+}
+
+.registration-form input,
+.registration-form select,
+.registration-form textarea {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 15px;
+
+    border: 1px solid #d9e4f2;
+    border-radius: 10px;
+
+    font-size: 15px;
+}
+
+.registration-form button {
+    width: 100%;
+    padding: 14px;
+
+    border: none;
+    border-radius: 10px;
+
+    background: #0D6EFD;
+    color: white;
+    font-size: 16px;
+    font-weight: 600;
+
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.registration-form button:hover {
+    transform: translateY(-2px);
+}
+.right-section::before{
+    content:"";
+    position:absolute;
+    inset:0;
+    background:rgba(13,110,253,0.15);
+}
+
+.registration-form{
+    position:relative;
+    z-index:1;
+}
+.right-section {
+    width: 50%;
+    min-height: 100vh;
+
+   background-image: url('https://images.unsplash.com/photo-1586773860418-d37222d8fce3');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
