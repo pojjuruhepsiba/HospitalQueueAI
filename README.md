@@ -1,117 +1,130 @@
-🏥 HospitalQueueAI
-An AI-powered hospital appointment and queue management system built with Flask and Google Gemini AI.
+# 🏥 HospitalQueueAI
 
-HospitalQueueAI is a web-based application designed to simplify the hospital appointment and patient queue management process.
+HospitalQueueAI is an AI-powered hospital appointment and queue management web application built using **Python Flask**, **HTML**, **CSS**, **JavaScript**, and **Google Gemini AI**.
 
-The application allows patients to register their details, enter symptoms, receive a suggested medical department, book an appointment, receive a queue token, check their queue status, and interact with an AI-powered chatbot.
+The system allows patients to register, enter symptoms, receive a suggested medical department, book appointments, generate queue tokens, check their queue status, and interact with an AI chatbot.
 
-📌 Project Overview
-In traditional hospital systems, patients may need to wait for long periods and manually communicate their symptoms and appointment requirements.
+---
 
-HospitalQueueAI provides a simple digital solution where patients can:
+## ✨ Features
 
-Register their details
-Enter their symptoms
-Get a suggested doctor/department
-Book an appointment
-Receive a queue token
-Check their queue position
-View estimated waiting time
-Interact with an AI chatbot
-The project combines a Flask backend, HTML/CSS/JavaScript frontend, and Google Gemini AI.
+### 👤 Patient Registration
 
-✨ Features
-👤 1. Patient Registration
-Patients can register by providing:
+Patients can provide:
 
-Patient name
-Age
-Phone number
-Symptoms
-The application validates the information and processes the patient's symptoms.
+- Name
+- Age
+- Phone number
+- Symptoms
 
-🩺 2. Doctor / Department Recommendation
-The system analyzes the patient's age and symptoms and suggests an appropriate department.
+The system processes the patient's information and suggests an appropriate department.
 
-Example recommendations
-Symptoms	Suggested Department
-Fever, cold, cough	General Physician
-Chest or heart symptoms	Cardiologist
-Headache or brain-related symptoms	Neurologist
-Skin or allergy symptoms	Dermatologist
-Eye-related symptoms	Ophthalmologist
-Bone or joint symptoms	Orthopedic
-Age below 16	Pediatrician
-This feature helps patients identify the appropriate hospital department before booking an appointment.
+### 🩺 Doctor / Department Recommendation
 
-🤖 3. AI-Powered Chatbot
-HospitalQueueAI includes an AI chatbot powered by Google Gemini.
+The application recommends a suitable department based on age and symptoms.
 
-Patients can enter their symptoms and receive general informational guidance.
+Examples:
 
-Example
-Patient:
-I have fever and cough.
+| Symptoms | Suggested Department |
+|---|---|
+| Fever, cold, cough | General Physician |
+| Chest or heart symptoms | Cardiologist |
+| Headache or brain-related symptoms | Neurologist |
+| Skin or allergy symptoms | Dermatologist |
+| Eye-related symptoms | Ophthalmologist |
+| Bone or joint symptoms | Orthopedic |
+| Age below 16 | Pediatrician |
 
-AI:
-General Physician may be an appropriate department.
-Please consult a qualified healthcare professional for medical advice.
+### 📅 Appointment Booking
 
-📅 4. Appointment Booking
 Patients can book an appointment after registration.
 
-The system stores the appointment information and generates a unique queue token.
+After successful booking, the system generates a unique queue token.
 
-Example
+Example:
+
+```text
 HSP-001
 HSP-002
 HSP-003
+```
 
-Each patient receives a token after successful booking.
-🎫 5. Queue Management
+### 🎫 Queue Management
+
 The queue management system provides information about the patient's position in the queue.
 
 It displays:
-Patient name
-Queue token
-Doctor/department
-Number of patients ahead
-Estimated waiting time
-The estimated waiting time is calculated based on the number of patients ahead.
-⏱️ 6. Waiting Time Estimation
-The application estimates the waiting time using the queue position.
 
-For example:
+- Patient name
+- Queue token
+- Doctor / Department
+- Number of patients ahead
+- Estimated waiting time
+
+### ⏱️ Waiting Time Estimation
+
+The application estimates the waiting time based on the number of patients ahead.
+
+Example:
+
+```text
 Patient 1 → 0 minutes
 Patient 2 → 5 minutes
 Patient 3 → 10 minutes
 Patient 4 → 15 minutes
-This helps patients understand their approximate waiting time.
-🌐 7. Responsive Web Interface
-The application provides a clean and user-friendly web interface using:
+```
 
-HTML5
-CSS3
-JavaScript
+### 🤖 AI Chatbot
+
+The application includes an AI chatbot powered by **Google Gemini AI**.
+
+Users can enter their symptoms and receive general informational guidance.
+
+### 🌐 Responsive Web Interface
+
+The application provides a clean and user-friendly interface using:
+
+- HTML5
+- CSS3
+- JavaScript
+
 The interface is designed to work across different screen sizes.
-🛠️ Technologies Used
-Frontend
-HTML5
-CSS3
-JavaScript
-Backend
-Python
-Flask
-Artificial Intelligence
-Google Gemini AI
-Google Generative AI API
-Environment Management
-Python-dotenv
-.env environment variables
-Version Control
-Git
-GitHub
-📂 Project Structure
+
+---
+
+# 🛠️ Technologies Used
+
+## Frontend
+
+- HTML5
+- CSS3
+- JavaScript
+
+## Backend
+
+- Python
+- Flask
+
+## Artificial Intelligence
+
+- Google Gemini AI
+- Google Generative AI API
+
+## Environment Management
+
+- Python-dotenv
+- `.env` environment variables
+
+## Version Control
+
+- Git
+- GitHub
+
+---
+
+# 📂 Project Structure
+
+```text
 HospitalQueueAI/
 │
 ├── Screenshots/
@@ -138,72 +151,151 @@ HospitalQueueAI/
 ├── .gitignore
 ├── app.py
 └── README.md
+```
 
-⚙️ Installation and Setup
+---
 
-Follow these steps to run HospitalQueueAI locally.
+# ⚙️ Installation and Setup
 
-1. Clone the Repository
+Follow the steps below to run HospitalQueueAI locally.
+
+## Step 1: Clone the Repository
+
+Clone the project from GitHub:
+
+```bash
 git clone https://github.com/pojjuruhepsiba/HospitalQueueAI.git
+```
 
-Navigate to the project directory:
+Navigate into the project directory:
 
+```bash
 cd HospitalQueueAI
-2. Create a Virtual Environment
+```
+
+---
+
+## Step 2: Create a Virtual Environment
+
+Create a Python virtual environment:
+
+```bash
 python -m venv venv
-Windows
+```
+
+### Windows
+
+Activate the virtual environment:
+
+```bash
 venv\Scripts\activate
-macOS / Linux
+```
+
+### macOS / Linux
+
+```bash
 source venv/bin/activate
-3. Install Dependencies
+```
+
+---
+
+## Step 3: Install Dependencies
+
+Install the required Python packages:
+
+```bash
 pip install flask python-dotenv google-generativeai
-4. Configure Gemini API Key
+```
 
-HospitalQueueAI uses Google Gemini AI for the chatbot.
+---
 
-Create a .env file in the project root:
+## Step 4: Configure Gemini API Key
 
+HospitalQueueAI uses Google Gemini AI for the chatbot functionality.
+
+Create a file named:
+
+```text
+.env
+```
+
+in the root project directory.
+
+The project structure should look like:
+
+```text
 HospitalQueueAI/
 │
 ├── .env
 ├── app.py
 ├── README.md
 └── ...
+```
 
 Add your Gemini API key:
 
+```env
 GEMINI_API_KEY=YOUR_GEMINI_API_KEY
+```
 
-The application loads the API key using environment variables:
+The application loads the API key using:
 
+```python
 import os
 from dotenv import load_dotenv
 
 load_dotenv()
+```
 
-Gemini is configured using:
+The Gemini API is configured using:
 
+```python
 genai.configure(
     api_key=os.getenv("GEMINI_API_KEY")
 )
-🔒 Security
+```
 
-The .env file is excluded from Git using .gitignore:
+---
 
+## 🔒 API Key Security
+
+The `.env` file is ignored by Git using `.gitignore`.
+
+The `.gitignore` file contains:
+
+```text
 .env
+```
 
-Never upload your .env file or API key to GitHub.
+This helps prevent the API key from being uploaded to GitHub.
 
-5. Run the Application
+> ⚠️ Never upload your `.env` file or Gemini API key to GitHub.
+
+---
+
+## Step 5: Run the Application
 
 Start the Flask application:
 
+```bash
 python app.py
+```
+
+The application will run locally.
 
 Open your browser and visit:
 
+```text
 http://127.0.0.1:5000
-🔄 Application Workflow
+```
+
+---
+
+# 🔄 Application Workflow
+
+The application follows this workflow:
+
+```text
              ┌──────────────────┐
              │      Patient     │
              └────────┬─────────┘
@@ -243,99 +335,162 @@ http://127.0.0.1:5000
              ┌──────────────────┐
              │   AI Chatbot     │
              └──────────────────┘
-📄 Application Pages
-🏠 Home Page
+```
 
-Provides access to the main HospitalQueueAI features.
+---
+
+# 📄 Application Pages
+
+## 🏠 Home Page
+
+The home page provides access to the main HospitalQueueAI features.
 
 Users can navigate to:
 
-Registration
-Appointment Booking
-Queue Management
-AI Chatbot
-📝 Registration Page
+- Registration
+- Appointment Booking
+- Queue Management
+- AI Chatbot
 
-Patients enter:
+---
 
-Name
-Age
-Phone Number
-Symptoms
-🩺 Appointment Page
+## 📝 Registration Page
 
-Displays the recommended doctor or department and allows the patient to book an appointment.
+The registration page collects:
 
-🎫 Queue Page
+- Name
+- Age
+- Phone Number
+- Symptoms
 
-Displays:
+After submitting the form, the system processes the patient's information and suggests an appropriate department.
 
-Queue Token
-Patient Name
-Department / Doctor
-Patients Ahead
-Estimated Waiting Time
-🤖 Chatbot Page
+---
 
-Allows users to enter symptoms and receive AI-generated general information using Google Gemini AI.
+## 🩺 Appointment Page
 
-✅ Success Page
+The appointment page displays the suggested doctor or department.
 
-Displays the appointment confirmation and generated queue token.
+The patient can proceed with the appointment booking.
 
-📸 Screenshots
-📝 Patient Registration
+---
 
-🏥 Hospital Features
+## 🎫 Queue Page
 
-📋 Hospital Form
+The queue page displays patient queue information.
 
-📅 Book Appointment
+It includes:
 
-🎫 Queue Management
+- Queue Token
+- Patient Name
+- Department / Doctor
+- Patients Ahead
+- Estimated Waiting Time
 
-🤖 AI Chatbot
+---
 
-🧠 AI Checker
+## 🤖 Chatbot Page
 
-🧪 Testing
+The chatbot allows users to enter symptoms and receive AI-generated general information.
 
-The following features can be tested manually.
+The chatbot uses the Google Gemini API.
 
-Patient Registration
-Enter patient name.
-Enter age.
-Enter phone number.
-Enter symptoms.
-Submit the registration form.
-Doctor Recommendation
+---
 
-Test symptoms such as:
+## ✅ Success Page
 
-Fever
-Cold
-Cough
-Chest pain
-Headache
-Skin allergy
-Eye problem
-Joint pain
-Appointment Booking
-Complete patient registration.
-Check the recommended department.
-Book the appointment.
-Verify the generated queue token.
-Queue Management
-Open the queue page.
-Verify the patient token.
-Check the number of patients ahead.
-Check the estimated waiting time.
-AI Chatbot
-Open the chatbot.
-Enter a symptom.
-Submit the question.
-Verify the AI response.
-🎫 Example Queue
+After successfully booking an appointment, the application displays:
+
+- Appointment Successfully Booked
+- Patient Name
+- Doctor / Department
+- Queue Token
+
+---
+
+# 📸 Screenshots
+
+## 📝 Patient Registration
+
+![Patient Registration](Screenshots/registration.png)
+
+## 🏥 Hospital Features
+
+![Hospital Features](Screenshots/hospital-features.png)
+
+## 📋 Hospital Form
+
+![Hospital Form](Screenshots/hospital-form.png)
+
+## 📅 Book Appointment
+
+![Book Appointment](Screenshots/book-appoinment.png)
+
+## 🎫 Queue Management
+
+![Queue Management](Screenshots/checks-queue.png)
+
+## 🤖 AI Chatbot
+
+![AI Chatbot](Screenshots/chatbot.png)
+
+## 🧠 AI Checker
+
+![AI Checker](Screenshots/ai%20checker.png)
+
+---
+
+# 🧪 Testing
+
+The following application features can be tested manually.
+
+## Patient Registration
+
+1. Enter patient name.
+2. Enter age.
+3. Enter phone number.
+4. Enter symptoms.
+5. Submit the registration form.
+
+## Doctor Recommendation
+
+Test different symptoms:
+
+- Fever
+- Cold
+- Cough
+- Chest pain
+- Headache
+- Skin allergy
+- Eye problem
+- Joint pain
+
+## Appointment Booking
+
+1. Complete patient registration.
+2. Check the recommended department.
+3. Book the appointment.
+4. Verify the generated queue token.
+
+## Queue Management
+
+1. Open the queue page.
+2. Verify the patient token.
+3. Verify the number of patients ahead.
+4. Verify the estimated waiting time.
+
+## AI Chatbot
+
+1. Open the chatbot.
+2. Enter a symptom.
+3. Submit the question.
+4. Verify the AI response.
+
+---
+
+# 🎫 Example Queue
+
+```text
 -----------------------------------------
              HOSPITAL QUEUE
 -----------------------------------------
@@ -347,69 +502,148 @@ HSP-002     Patient 2      Cardiologist
 HSP-003     Patient 3      Neurologist
 
 -----------------------------------------
+```
 
+---
+
+# 🔐 Security Features
+
+HospitalQueueAI follows basic security practices:
+
+- API keys are stored using environment variables.
+- `.env` is excluded from Git.
+- Sensitive credentials are not included in source code.
+- `.gitignore` prevents accidental upload of environment files.
+
+---
+
+# ⚠️ Medical Disclaimer
 
 HospitalQueueAI is an educational and academic project.
 
-The AI chatbot and department recommendation features provide general informational guidance only.
+The AI chatbot and doctor/department recommendation features provide general informational guidance only.
 
-They are not intended to provide medical diagnosis, emergency treatment, or professional medical advice.
+They are **not intended to provide medical diagnosis, emergency treatment, or professional medical advice**.
 
 Patients should consult qualified healthcare professionals for medical concerns.
 
-🚀 Future Enhancements
-🗄️ MySQL or MongoDB database integration
-👨‍⚕️ Doctor login and dashboard
-👤 Patient login and profile
-📊 Admin dashboard
-📅 Real-time appointment scheduling
-🔔 Email and SMS notifications
-📈 Hospital analytics
-🤖 Multilingual AI chatbot
-🎙️ Voice-based chatbot
-☁️ Cloud deployment
-📈 Project Benefits
+---
 
-HospitalQueueAI provides a simple digital solution for hospital appointment and queue management.
+# 🚀 Future Enhancements
 
-Benefits
-⏱️ Reduced waiting confusion
-🎫 Digital queue tokens
-🩺 Department recommendation
-🤖 AI-powered assistance
-📅 Easy appointment booking
-📱 User-friendly interface
-🔐 Environment-based API security
-🎓 Academic Project
+The following features can be added in future versions:
 
-This project demonstrates:
+## 🗄️ Database
 
-Python programming
-Flask web development
-HTML/CSS/JavaScript
-REST-style web routes
-AI API integration
-Environment variable management
-Git and GitHub
-Hospital appointment workflow
-Queue management
+- MySQL integration
+- MongoDB integration
+- Persistent patient records
+- Appointment history
 
-👨‍💻 Author
-Pojjuru Hepsiba
-GitHub
+## 👨‍⚕️ Doctor Management
 
-https://github.com/pojjuruhepsiba
+- Doctor login
+- Doctor dashboard
+- Doctor availability
+- Department management
 
-Project Repository
+## 👤 Patient Management
 
-HospitalQueueAI
+- Patient login
+- Patient profile
+- Appointment history
+- Medical record management
 
-📄 License
+## 📊 Admin Dashboard
+
+- Total patients
+- Total appointments
+- Active queue
+- Doctor statistics
+- Department statistics
+- Daily appointment analytics
+
+## 🔔 Notifications
+
+- Email notifications
+- SMS notifications
+- Appointment reminders
+- Queue status notifications
+
+## 🤖 AI Improvements
+
+- Improved symptom classification
+- Multilingual chatbot
+- Voice-based chatbot
+- More detailed department recommendations
+
+## ☁️ Deployment
+
+The application can be deployed using cloud platforms such as:
+
+- Render
+- Railway
+- PythonAnywhere
+- Google Cloud
+- AWS
+
+---
+
+# 📈 Project Benefits
+
+HospitalQueueAI helps reduce manual hospital queue management and provides a simple digital experience for patients.
+
+### Benefits
+
+- ⏱️ Reduced waiting confusion
+- 🎫 Digital queue tokens
+- 🩺 Department recommendation
+- 🤖 AI-powered assistance
+- 📅 Easy appointment booking
+- 📱 User-friendly interface
+- 🔐 Environment-based API security
+
+---
+
+# 🎓 Academic Project
+
+This project was developed as an educational project to demonstrate:
+
+- Python programming
+- Flask web development
+- HTML/CSS/JavaScript
+- REST-style web routes
+- AI API integration
+- Environment variable management
+- Git and GitHub
+- Basic hospital workflow automation
+
+---
+
+# 👨‍💻 Author
+
+## Pojjuru Hepsiba
+
+### GitHub
+
+[https://github.com/pojjuruhepsiba](https://github.com/pojjuruhepsiba)
+
+### Project Repository
+
+[HospitalQueueAI](https://github.com/pojjuruhepsiba/HospitalQueueAI)
+
+---
+
+# 📄 License
 
 This project is created for educational and academic purposes.
 
 You are free to study and modify the source code for learning purposes.
 
-⭐ Support
+---
 
-If you find this project useful, please consider giving the repository a ⭐ on GitHub.
+# ⭐ Support
+
+If you find this project useful, you can give the repository a ⭐ on GitHub.
+
+Thank you for checking out **HospitalQueueAI**! 🏥🤖
