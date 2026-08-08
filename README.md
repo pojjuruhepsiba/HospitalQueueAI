@@ -79,57 +79,64 @@ General Physician may be an appropriate department.
 Please consult a qualified healthcare professional for medical advice.
 
 ```
-📅 4. Appointment Booking
+---
+# 📅 4. Appointment Booking
 
 Patients can book an appointment after registration.
 
 The system stores the appointment information and generates a unique queue token.
 
-Example
+### Example
+```text
 HSP-001
 HSP-002
 HSP-003
 
 Each patient receives a token after successful booking.
+```
 
-🎫 5. Queue Management
+---
+#  🎫 5. Queue Management
 
 The queue management system provides information about the patient's position in the queue.
 
-It displays:
-
+### It displays:
+```text
 Patient name
 Queue token
 Doctor/department
 Number of patients ahead
 Estimated waiting time
-
+```
 The estimated waiting time is calculated based on the number of patients ahead.
+---
 
-⏱️ 6. Waiting Time Estimation
+# ⏱️ 6. Waiting Time Estimation
 
 The application estimates the waiting time using the queue position.
 
-For example:
-
+### For example:
+```text
 Patient 1 → 0 minutes
 Patient 2 → 5 minutes
 Patient 3 → 10 minutes
 Patient 4 → 15 minutes
-
+```
 This helps patients understand their approximate waiting time.
+---
 
-🌐 7. Responsive Web Interface
+# 🌐 7. Responsive Web Interface
 
 The application provides a clean and user-friendly web interface using:
 
-HTML5
-CSS3
-JavaScript
+- HTML5
+- CSS3
+- JavaScript
 
 The interface is designed to work across different screen sizes.
-
-🛠️ Technologies Used
+---
+#  🛠️ Technologies Used
+```text
 Frontend
 HTML5
 CSS3
@@ -146,7 +153,12 @@ Python-dotenv
 Version Control
 Git
 GitHub
-📂 Project Structure
+```
+
+----
+
+# 📂 Project Structure
+```text
 HospitalQueueAI/
 │
 ├── Screenshots/
@@ -173,11 +185,14 @@ HospitalQueueAI/
 ├── .gitignore
 ├── app.py
 └── README.md
-⚙️ Installation and Setup
+```
+---
+
+# ⚙️ Installation and Setup
 
 Follow the steps below to run HospitalQueueAI locally.
 
-Step 1: Clone the Repository
+### Step 1: Clone the Repository
 git clone https://github.com/pojjuruhepsiba/HospitalQueueAI.git
 
 Navigate into the project directory:
